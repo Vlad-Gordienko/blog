@@ -15,7 +15,7 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
         path: '', component: AdminLayoutComponent, children: [
           {path: 'login', component: LoginPageComponent},
           {path: 'create', component: CreatePageComponent},
-          {path: 'post/:id/edit', component: EditPageComponent},
+          {path: 'post-card/:id/edit', component: EditPageComponent},
           {path: 'dashboard', component: DashboardPageComponent},
         ]
       }

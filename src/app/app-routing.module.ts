@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {path: '', component: HomePageComponent},
-      {path: 'post/:id', component: PostPageComponent},
+      {path: 'post-card/:id', component: PostPageComponent},
     ]
   },
   {

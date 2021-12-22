@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PostPageComponent } from './post-page/post-page.component';
-import { PostComponent } from './shared/components/post/post.component';
+import { PostCardComponent } from './shared/components/post-card/post-card.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { PostComponent } from './shared/components/post/post.component';
     MainLayoutComponent,
     HomePageComponent,
     PostPageComponent,
-    PostComponent
+    PostCardComponent
   ],
   imports: [
     BrowserModule,
