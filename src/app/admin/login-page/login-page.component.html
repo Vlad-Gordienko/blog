@@ -1,1 +1,37 @@
-<p>login-page works!</p>
+<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Administration panel login</h2>
+
+  <div class="alert alert-danger" *ngIf="error$ | async as error">
+    {{ error }}
+  </div>
+
+  <div class="alert alert-info" *ngIf="messageInfo">
+    {{ messageInfo }}
+  </div>
+
+  <div [ngClass]="{invalid: emailControl?.touched && emailControl?.invalid}"
+       class="form-control">
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email">
+    <div *ngIf="emailControl?.touched && emailControl?.invalid"
+         class="validation">
+      <small *ngIf="emailControl?.errors?.required">Enter email</small>
+      <small *ngIf="emailControl?.errors?.email">Email is invalid</small>
+    </div>
+  </div>
+
+  <div [ngClass]="{invalid: passwordControl?.touched && passwordControl?.invalid}"
+       class="form-control">
+    <label for="password">Password:</label>
+    <input id="password" type="password" formControlName="password">
+    <div *ngIf="passwordControl?.touched && passwordControl?.invalid"
+         class="validation">
+      <small *ngIf="passwordControl?.errors?.required">Enter password</small>
+      <small *ngIf="passwordControl?.errors?.minlength">Min password {{passwordControl?.errors?.minlength?.requiredLength}} symbols</small>
+    </div>
+  </div>
+
+  <button type="submit"
+          class="btn btn-primary"
+          [disabled]="form.invalid || loading">Login</button>
+</form>
